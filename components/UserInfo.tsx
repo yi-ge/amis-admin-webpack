@@ -1,59 +1,59 @@
 import * as React from 'react';
 
 interface UserInfoProps {
-    user: any;
+  user: any;
 };
 interface UserInfoState {
-    open?: boolean;
+  open?: boolean;
 };
 export default class UserInfo extends React.Component<UserInfoProps, UserInfoState> {
-    constructor(props: UserInfoProps) {
-        super(props);
-        this.state = {
-            open: false,
-        };
-        this.open = this.open.bind(this);
-        this.close = this.close.bind(this);
-        this.logout = this.logout.bind(this);
-    }
-
-    static defaultProps = {
+  constructor (props: UserInfoProps) {
+    super(props);
+    this.state = {
+      open: false,
     };
-    open() {
-        this.setState({
-            open: true
-        });
-    }
-    close() {
-        this.setState({
-            open: false
-        });
-    }
-    handleClickOutside() {
-        this.close();
-    }
+    this.open = this.open.bind(this);
+    this.close = this.close.bind(this);
+    this.logout = this.logout.bind(this);
+  }
 
-    logout() {
-        
-    }
+  static defaultProps = {
+  };
+  open() {
+    this.setState({
+      open: true
+    });
+  }
+  close() {
+    this.setState({
+      open: false
+    });
+  }
+  handleClickOutside() {
+    this.close();
+  }
 
-    render() {
-        const user = this.props.user;
-        const open = this.state.open;
+  logout() {
 
-        return (
-            <div className="dropdown">
-                <span
-                    onClick={this.open}
-                >
-                    <span className="pull-right m-b-n-sm m-l-sm">
-                        <span><i className="iconfont icon-admin" /></span>
-                        <i className="on md b-white bottom" />
-                    </span>
-                    <span className="hidden-sm hidden-md">{user.name}</span>
-                    <b className="caret" />
-                </span>
-            </div>
-        );
-    }
+  }
+
+  render() {
+    const user = this.props.user;
+    const open = this.state.open;
+
+    return (
+      <div className="dropdown">
+        <span
+          onClick={ this.open }
+        >
+          <span className="pull-right m-b-n-sm m-l-sm">
+            <span><i className="iconfont icon-admin" /></span>
+            <i className="on md b-white bottom" />
+          </span>
+          <span className="hidden-sm hidden-md">{ user.name }</span>
+          <b className="caret" />
+        </span>
+      </div>
+    );
+  }
 }

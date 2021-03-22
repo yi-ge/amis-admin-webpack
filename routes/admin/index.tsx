@@ -21,8 +21,8 @@ type NavItem = {
   children?: Array<NavItem>;
   icon?: string;
   path?: string;
-  component?: React.ReactType;
-  getComponent?: () => Promise<React.ReactType>;
+  component?: React.ElementType;
+  getComponent?: () => Promise<React.ElementType>;
 };
 const navigations: Array<NavItem> = [
   {
@@ -90,7 +90,7 @@ let PATH_PREFIX = '/admin';
 let ContextPath = '';
 
 if (process.env.NODE_ENV === 'production') {
-  ContextPath = '/amis-admin'
+  ContextPath = '/manage'
 }
 
 
@@ -108,15 +108,6 @@ function navigations2route(pathPrefix = PATH_PREFIX) {
             exact
           />
         )
-        // } else if (item.path && item.getComponent) {
-        //   routes.push(
-        //     <Route
-        //       key={ routes.length + 1 }
-        //       path={ item.path[0] === '/' ? (ContextPath + item.path) : `${ContextPath}${pathPrefix}/${item.path}` }
-        //       getComponent={ item.getComponent }
-        //       exact
-        //     />
-        //   )
       }
     });
   });

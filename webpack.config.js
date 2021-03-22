@@ -4,6 +4,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const apiMocker = require("mocker-api");
 
 module.exports = {
+  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   entry: {
     app: "./index.tsx",
 
@@ -37,14 +38,14 @@ module.exports = {
         ]
       },
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.styl$/i,
         use: [
           {
             loader: "style-loader",
             options: { injectType: "styleTag" }
           },
           "css-loader",
-          "sass-loader"
+          "stylus-loader"
         ]
       },
       {
@@ -62,7 +63,7 @@ module.exports = {
     historyApiFallback: {
       rewrites: [{ from: /^\/(login|admin.*)$/, to: "/index.html" }]
     },
-    before(app) {
+    before (app) {
       apiMocker(app, path.resolve("./mocker/index.js"));
     }
   },
