@@ -1,14 +1,21 @@
 {
-  "name": "terminal-manage",
+  "name": "amis-admin-webpack",
   "version": "0.1.0",
-  "description": "终端机管理后台",
+  "description": "AMis Admin webpack template.",
   "main": "index.js",
   "scripts": {
     "watch": "webpack --watch",
     "serve": "webpack serve --open",
     "build": "webpack"
   },
-  "license": "BSC",
+  "keywords": [
+    "amis",
+    "boilerplate",
+    "admin",
+    "react"
+  ],
+  "author": "fex",
+  "license": "MIT",
   "dependencies": {
     "amis": "^1.1.4",
     "axios": "^0.21.1",
@@ -21,8 +28,8 @@
     "mobx-state-tree": "5.0.1",
     "promise": "^8.1.0",
     "qs": "6.10.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "react": "16.14.0",
+    "react-dom": "16.14.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0"
   },

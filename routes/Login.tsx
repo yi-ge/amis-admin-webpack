@@ -90,7 +90,7 @@ export default class LoginRoute extends React.Component<LoginProps> {
     return (
       <div className="app app-header-fixed ">
         <div className="container w-xxl w-auto-xs">
-          <a className="block m-t-xxl m-b-xl text-center text-2x">终端机管理系统</a>
+          <a className="block m-t-xxl m-b-xl text-center text-2x">XX Manage</a>
           <AMisRenderer
             onFinished={ this.handleFormSaved }
             schema={ schema }

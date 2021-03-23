@@ -146,7 +146,7 @@ export default class Admin extends React.Component<AdminProps> {
           </button>
           <div className={ `a-Layout-brand` }>
             <i className="fa fa-cloud"></i>
-            <span className="hidden-folded m-l-sm">终端机管理</span>
+            <span className="hidden-folded m-l-sm">XX管理</span>
           </div>
         </div>
         <div className={ `a-Layout-headerBar` }>
